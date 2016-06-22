@@ -25,8 +25,6 @@ class QuickRollViewController: UIViewController {
     expressionLabel.text = ""
     resultLabel.text = ""
     rollButton.setBackgroundColor(red: 92, green: 184, blue: 92, alpha: 1.0)
-    
-    //Test edit
   }
   
   // MARK - Control Actions

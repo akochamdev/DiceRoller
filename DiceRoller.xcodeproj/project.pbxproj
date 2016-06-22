@@ -524,6 +524,7 @@
 				0B41B7551D1B46BA004CF29A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0B41B7561D1B46BA004CF29A /* Build configuration list for PBXNativeTarget "DiceRollerTests" */ = {
 			isa = XCConfigurationList;
@@ -532,6 +533,7 @@
 				0B41B7581D1B46BA004CF29A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0B41B7591D1B46BA004CF29A /* Build configuration list for PBXNativeTarget "DiceRollerUITests" */ = {
 			isa = XCConfigurationList;
@@ -540,6 +542,7 @@
 				0B41B75B1D1B46BA004CF29A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
