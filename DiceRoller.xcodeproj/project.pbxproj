@@ -8,13 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		0B41B72D1D1B46BA004CF29A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B41B72C1D1B46BA004CF29A /* AppDelegate.swift */; };
-		0B41B72F1D1B46BA004CF29A /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B41B72E1D1B46BA004CF29A /* FirstViewController.swift */; };
 		0B41B7311D1B46BA004CF29A /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B41B7301D1B46BA004CF29A /* SecondViewController.swift */; };
 		0B41B7341D1B46BA004CF29A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B41B7321D1B46BA004CF29A /* Main.storyboard */; };
 		0B41B7361D1B46BA004CF29A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B41B7351D1B46BA004CF29A /* Assets.xcassets */; };
 		0B41B7391D1B46BA004CF29A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B41B7371D1B46BA004CF29A /* LaunchScreen.storyboard */; };
 		0B41B7441D1B46BA004CF29A /* DiceRollerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B41B7431D1B46BA004CF29A /* DiceRollerTests.swift */; };
 		0B41B74F1D1B46BA004CF29A /* DiceRollerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B41B74E1D1B46BA004CF29A /* DiceRollerUITests.swift */; };
+		0B41B75D1D1B4BD1004CF29A /* QuickRollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B41B75C1D1B4BD1004CF29A /* QuickRollViewController.swift */; };
+		0B41B7621D1B4C14004CF29A /* QuickRollDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B41B7611D1B4C14004CF29A /* QuickRollDataStore.swift */; };
+		0B41B7651D1B4C1E004CF29A /* UIButtonExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B41B7631D1B4C1E004CF29A /* UIButtonExtensions.swift */; };
+		0B41B7661D1B4C1E004CF29A /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B41B7641D1B4C1E004CF29A /* UIColorExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +40,6 @@
 /* Begin PBXFileReference section */
 		0B41B7291D1B46BA004CF29A /* DiceRoller.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DiceRoller.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B41B72C1D1B46BA004CF29A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0B41B72E1D1B46BA004CF29A /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		0B41B7301D1B46BA004CF29A /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		0B41B7331D1B46BA004CF29A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0B41B7351D1B46BA004CF29A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,6 +51,10 @@
 		0B41B74A1D1B46BA004CF29A /* DiceRollerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DiceRollerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B41B74E1D1B46BA004CF29A /* DiceRollerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceRollerUITests.swift; sourceTree = "<group>"; };
 		0B41B7501D1B46BA004CF29A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0B41B75C1D1B4BD1004CF29A /* QuickRollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuickRollViewController.swift; sourceTree = "<group>"; };
+		0B41B7611D1B4C14004CF29A /* QuickRollDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuickRollDataStore.swift; sourceTree = "<group>"; };
+		0B41B7631D1B4C1E004CF29A /* UIButtonExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonExtensions.swift; sourceTree = "<group>"; };
+		0B41B7641D1B4C1E004CF29A /* UIColorExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,9 +105,10 @@
 		0B41B72B1D1B46BA004CF29A /* DiceRoller */ = {
 			isa = PBXGroup;
 			children = (
+				0B41B7601D1B4C04004CF29A /* Extensions */,
+				0B41B75F1D1B4BFC004CF29A /* Data */,
+				0B41B75E1D1B4BF3004CF29A /* Controllers */,
 				0B41B72C1D1B46BA004CF29A /* AppDelegate.swift */,
-				0B41B72E1D1B46BA004CF29A /* FirstViewController.swift */,
-				0B41B7301D1B46BA004CF29A /* SecondViewController.swift */,
 				0B41B7321D1B46BA004CF29A /* Main.storyboard */,
 				0B41B7351D1B46BA004CF29A /* Assets.xcassets */,
 				0B41B7371D1B46BA004CF29A /* LaunchScreen.storyboard */,
@@ -126,6 +133,32 @@
 				0B41B7501D1B46BA004CF29A /* Info.plist */,
 			);
 			path = DiceRollerUITests;
+			sourceTree = "<group>";
+		};
+		0B41B75E1D1B4BF3004CF29A /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				0B41B75C1D1B4BD1004CF29A /* QuickRollViewController.swift */,
+				0B41B7301D1B46BA004CF29A /* SecondViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		0B41B75F1D1B4BFC004CF29A /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				0B41B7611D1B4C14004CF29A /* QuickRollDataStore.swift */,
+			);
+			name = Data;
+			sourceTree = "<group>";
+		};
+		0B41B7601D1B4C04004CF29A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				0B41B7631D1B4C1E004CF29A /* UIButtonExtensions.swift */,
+				0B41B7641D1B4C1E004CF29A /* UIColorExtensions.swift */,
+			);
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,9 +292,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B41B7651D1B4C1E004CF29A /* UIButtonExtensions.swift in Sources */,
+				0B41B7621D1B4C14004CF29A /* QuickRollDataStore.swift in Sources */,
 				0B41B7311D1B46BA004CF29A /* SecondViewController.swift in Sources */,
+				0B41B7661D1B4C1E004CF29A /* UIColorExtensions.swift in Sources */,
+				0B41B75D1D1B4BD1004CF29A /* QuickRollViewController.swift in Sources */,
 				0B41B72D1D1B46BA004CF29A /* AppDelegate.swift in Sources */,
-				0B41B72F1D1B46BA004CF29A /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
