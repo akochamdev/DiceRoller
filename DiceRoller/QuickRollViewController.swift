@@ -2,7 +2,7 @@
 //  QuickRollViewController.swift
 //  DiceRoller
 //
-//  Created by Ako Diakoparaskevas on 6/19/16.
+//  Created by Charles Diakoparaskevas on 6/19/16.
 //  Copyright © 2016 Charles Diakoparaskevas. All rights reserved.
 //
 
@@ -16,6 +16,7 @@ class QuickRollViewController: UIViewController {
   @IBOutlet var rollButton: UIButton!
   
   let pickerData = QuickRollData.data
+  let rollButtonColor = UIColor.color(withRedValue: 76, greenValue: 217, blueValue: 100, alpha: 1.0)
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -24,7 +25,12 @@ class QuickRollViewController: UIViewController {
     
     expressionLabel.text = ""
     resultLabel.text = ""
-    rollButton.setBackgroundColor(red: 92, green: 184, blue: 92, alpha: 1.0)
+    
+    rollButton.backgroundColor = UIColor.clearColor()
+    rollButton.layer.borderWidth = 1
+    rollButton.layer.borderColor = rollButtonColor.CGColor
+    rollButton.setTitleColor(rollButtonColor, forState: .Normal)
+    rollButton.setTitleColor(UIColor.whiteColor(), forState: .Highlighted)
   }
   
   // MARK - Control Actions
@@ -65,6 +71,12 @@ class QuickRollViewController: UIViewController {
     
     print("Total after applying modifier (\(operatorValue)\(modifierValue)): \(result)")
     resultLabel.text = "\(result)"
+    
+    rollButton.backgroundColor = UIColor.clearColor()
+  }
+  
+  @IBAction func rollTappedDown(sender: AnyObject) {
+    rollButton.backgroundColor = rollButtonColor
   }
 }
 

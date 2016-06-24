@@ -23,13 +23,13 @@
                                 <rect key="frame" x="195" y="279" width="210" height="42"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="36"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loaded by SecondViewController" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NDk-cv-Gan">
                                 <rect key="frame" x="193" y="329" width="215" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -90,7 +90,7 @@
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Expression" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vdp-wA-ZcP" userLabel="Expression Label">
                                                         <rect key="frame" x="8" y="8" width="584" height="32"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
@@ -109,11 +109,11 @@
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Roll Result" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="uVj-JS-gMQ" userLabel="Result Label">
                                                         <rect key="frame" x="8" y="8" width="584" height="253"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="120"/>
-                                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
-                                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="trailing" secondItem="uVj-JS-gMQ" secondAttribute="trailing" constant="8" id="T2W-rS-WJB"/>
                                                     <constraint firstAttribute="bottom" secondItem="uVj-JS-gMQ" secondAttribute="bottom" constant="8" id="gKX-l4-T39"/>
@@ -122,7 +122,7 @@
                                                 </constraints>
                                             </view>
                                         </subviews>
-                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="WF9-Nj-b8C" firstAttribute="leading" secondItem="7T7-UB-bgT" secondAttribute="leading" id="4eg-NO-ycs"/>
                                             <constraint firstAttribute="bottom" secondItem="6Wo-Qt-ZPa" secondAttribute="bottom" id="Bsk-vr-cE4"/>
@@ -159,14 +159,15 @@
                                                         <rect key="frame" x="8" y="8" width="584" height="43"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                         <state key="normal" title="Roll">
-                                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                         </state>
                                                         <connections>
                                                             <action selector="rollTapped:" destination="esA-eV-a3h" eventType="touchUpInside" id="Q6b-yX-crU"/>
+                                                            <action selector="rollTappedDown:" destination="esA-eV-a3h" eventType="touchDown" id="fSl-Zm-YaW"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
-                                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="bottom" secondItem="1EO-TG-Dw1" secondAttribute="bottom" constant="8" id="I8O-T2-HZ1"/>
                                                     <constraint firstItem="1EO-TG-Dw1" firstAttribute="leading" secondItem="IDm-Bl-wd0" secondAttribute="leading" constant="8" id="JP7-vd-gLp"/>
@@ -175,7 +176,7 @@
                                                 </constraints>
                                             </view>
                                         </subviews>
-                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="2vP-CN-rYF" secondAttribute="trailing" id="6yM-XL-Zk7"/>
                                             <constraint firstItem="2vP-CN-rYF" firstAttribute="height" secondItem="2Aj-U2-tCv" secondAttribute="height" multiplier="0.65" id="WaG-FC-X7x"/>

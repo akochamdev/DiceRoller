@@ -2,7 +2,7 @@
 //  DiceRollerTests.swift
 //  DiceRollerTests
 //
-//  Created by Ako Diakoparaskevas on 6/22/16.
+//  Created by Charles Diakoparaskevas on 6/22/16.
 //  Copyright © 2016 Charles Diakoparaskevas. All rights reserved.
 //
 
