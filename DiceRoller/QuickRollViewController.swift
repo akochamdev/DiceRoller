@@ -26,11 +26,13 @@ class QuickRollViewController: UIViewController {
     expressionLabel.text = ""
     resultLabel.text = ""
     
-    rollButton.backgroundColor = UIColor.clearColor()
     rollButton.layer.borderWidth = 1
     rollButton.layer.borderColor = rollButtonColor.CGColor
+    rollButton.layer.cornerRadius = 0.5 * rollButton.frame.size.width
+    rollButton.backgroundColor = UIColor.whiteColor()
     rollButton.setTitleColor(rollButtonColor, forState: .Normal)
     rollButton.setTitleColor(UIColor.whiteColor(), forState: .Highlighted)
+    rollButton.clipsToBounds = true
   }
   
   // MARK - Control Actions
@@ -72,7 +74,7 @@ class QuickRollViewController: UIViewController {
     print("Total after applying modifier (\(operatorValue)\(modifierValue)): \(result)")
     resultLabel.text = "\(result)"
     
-    rollButton.backgroundColor = UIColor.clearColor()
+    rollButton.backgroundColor = UIColor.whiteColor()
   }
   
   @IBAction func rollTappedDown(sender: AnyObject) {
