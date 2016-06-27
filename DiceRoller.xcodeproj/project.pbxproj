@@ -18,6 +18,7 @@
 		0B41B7621D1B4C14004CF29A /* QuickRollDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B41B7611D1B4C14004CF29A /* QuickRollDataStore.swift */; };
 		0B41B7651D1B4C1E004CF29A /* UIButtonExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B41B7631D1B4C1E004CF29A /* UIButtonExtensions.swift */; };
 		0B41B7661D1B4C1E004CF29A /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B41B7641D1B4C1E004CF29A /* UIColorExtensions.swift */; };
+		0B8CEC8E1D20CF270018E8D1 /* IndividualRollCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8CEC8D1D20CF270018E8D1 /* IndividualRollCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		0B41B7611D1B4C14004CF29A /* QuickRollDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuickRollDataStore.swift; sourceTree = "<group>"; };
 		0B41B7631D1B4C1E004CF29A /* UIButtonExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonExtensions.swift; sourceTree = "<group>"; };
 		0B41B7641D1B4C1E004CF29A /* UIColorExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
+		0B8CEC8D1D20CF270018E8D1 /* IndividualRollCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndividualRollCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 		0B41B72B1D1B46BA004CF29A /* DiceRoller */ = {
 			isa = PBXGroup;
 			children = (
+				0B8CEC8B1D20CEF60018E8D1 /* Model */,
 				0B41B7601D1B4C04004CF29A /* Extensions */,
 				0B41B75F1D1B4BFC004CF29A /* Data */,
 				0B41B75E1D1B4BF3004CF29A /* Controllers */,
@@ -159,6 +162,22 @@
 				0B41B7641D1B4C1E004CF29A /* UIColorExtensions.swift */,
 			);
 			name = Extensions;
+			sourceTree = "<group>";
+		};
+		0B8CEC8B1D20CEF60018E8D1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0B8CEC8C1D20CEFC0018E8D1 /* Cells */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		0B8CEC8C1D20CEFC0018E8D1 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				0B8CEC8D1D20CF270018E8D1 /* IndividualRollCell.swift */,
+			);
+			name = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -295,6 +314,7 @@
 				0B41B7651D1B4C1E004CF29A /* UIButtonExtensions.swift in Sources */,
 				0B41B7621D1B4C14004CF29A /* QuickRollDataStore.swift in Sources */,
 				0B41B7311D1B46BA004CF29A /* SecondViewController.swift in Sources */,
+				0B8CEC8E1D20CF270018E8D1 /* IndividualRollCell.swift in Sources */,
 				0B41B7661D1B4C1E004CF29A /* UIColorExtensions.swift in Sources */,
 				0B41B75D1D1B4BD1004CF29A /* QuickRollViewController.swift in Sources */,
 				0B41B72D1D1B46BA004CF29A /* AppDelegate.swift in Sources */,

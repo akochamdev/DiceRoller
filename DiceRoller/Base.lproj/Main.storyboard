@@ -84,30 +84,11 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7T7-UB-bgT" userLabel="Results Container">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="268"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WF9-Nj-b8C" userLabel="Heading Container">
-                                                <rect key="frame" x="0.0" y="0.0" width="600" height="41"/>
-                                                <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Expression" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vdp-wA-ZcP" userLabel="Expression Label">
-                                                        <rect key="frame" x="8" y="8" width="584" height="25"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                </subviews>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <constraints>
-                                                    <constraint firstItem="vdp-wA-ZcP" firstAttribute="top" secondItem="WF9-Nj-b8C" secondAttribute="top" constant="8" id="4Od-k5-fz9"/>
-                                                    <constraint firstAttribute="bottom" secondItem="vdp-wA-ZcP" secondAttribute="bottom" constant="8" id="FB9-PJ-sp2"/>
-                                                    <constraint firstItem="vdp-wA-ZcP" firstAttribute="centerY" secondItem="WF9-Nj-b8C" secondAttribute="centerY" id="fSw-Av-70W"/>
-                                                    <constraint firstAttribute="trailing" secondItem="vdp-wA-ZcP" secondAttribute="trailing" constant="8" id="mjM-Jn-ukZ"/>
-                                                    <constraint firstItem="vdp-wA-ZcP" firstAttribute="leading" secondItem="WF9-Nj-b8C" secondAttribute="leading" constant="8" id="s6a-a3-ibf"/>
-                                                </constraints>
-                                            </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Wo-Qt-ZPa" userLabel="Results Value Container">
-                                                <rect key="frame" x="0.0" y="41" width="600" height="227"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="600" height="215"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Roll Result" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="uVj-JS-gMQ" userLabel="Result Label">
-                                                        <rect key="frame" x="8" y="8" width="584" height="211"/>
+                                                        <rect key="frame" x="8" y="8" width="584" height="199"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="120"/>
                                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -121,18 +102,75 @@
                                                     <constraint firstItem="uVj-JS-gMQ" firstAttribute="leading" secondItem="6Wo-Qt-ZPa" secondAttribute="leading" constant="8" id="t7x-Fb-6ra"/>
                                                 </constraints>
                                             </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iIb-wh-DUC" userLabel="Individual Rolls Container">
+                                                <rect key="frame" x="0.0" y="215" width="600" height="53"/>
+                                                <subviews>
+                                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="YkT-NE-7ZZ">
+                                                        <rect key="frame" x="0.0" y="0.0" width="600" height="53"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="rYP-zK-vp7">
+                                                            <size key="itemSize" width="50" height="50"/>
+                                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                        </collectionViewFlowLayout>
+                                                        <cells>
+                                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="IndividualRoll" reuseIdentifier="IndividualRoll" id="ivR-iS-BFw" customClass="IndividualRollCell" customModule="DiceRoller" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="2" width="50" height="50"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                                    <autoresizingMask key="autoresizingMask"/>
+                                                                    <subviews>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IQb-RX-eLH" userLabel="Roll Label">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
+                                                                    </subviews>
+                                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                                </view>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="trailing" secondItem="IQb-RX-eLH" secondAttribute="trailing" id="JpC-41-q1d"/>
+                                                                    <constraint firstItem="IQb-RX-eLH" firstAttribute="top" secondItem="ivR-iS-BFw" secondAttribute="top" id="gkB-y5-z22"/>
+                                                                    <constraint firstItem="IQb-RX-eLH" firstAttribute="leading" secondItem="ivR-iS-BFw" secondAttribute="leading" id="trP-8O-KFr"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="IQb-RX-eLH" secondAttribute="bottom" id="yrg-5i-jIE"/>
+                                                                </constraints>
+                                                                <connections>
+                                                                    <outlet property="textLabel" destination="IQb-RX-eLH" id="yf1-Gr-GCR"/>
+                                                                </connections>
+                                                            </collectionViewCell>
+                                                        </cells>
+                                                    </collectionView>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstItem="YkT-NE-7ZZ" firstAttribute="top" secondItem="iIb-wh-DUC" secondAttribute="top" id="Ajh-Wu-Pc0"/>
+                                                    <constraint firstItem="YkT-NE-7ZZ" firstAttribute="leading" secondItem="iIb-wh-DUC" secondAttribute="leading" id="Esj-sx-Q7O"/>
+                                                    <constraint firstAttribute="trailing" secondItem="YkT-NE-7ZZ" secondAttribute="trailing" id="FZi-W3-7Wt"/>
+                                                    <constraint firstAttribute="bottom" secondItem="YkT-NE-7ZZ" secondAttribute="bottom" id="jZL-6X-pt2"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstItem="WF9-Nj-b8C" firstAttribute="leading" secondItem="7T7-UB-bgT" secondAttribute="leading" id="4eg-NO-ycs"/>
                                             <constraint firstAttribute="bottom" secondItem="6Wo-Qt-ZPa" secondAttribute="bottom" id="Bsk-vr-cE4"/>
-                                            <constraint firstItem="WF9-Nj-b8C" firstAttribute="height" secondItem="7T7-UB-bgT" secondAttribute="height" multiplier="0.15" id="L4l-Bx-hZO"/>
+                                            <constraint firstAttribute="bottom" secondItem="iIb-wh-DUC" secondAttribute="bottom" id="Cjl-AS-4oN"/>
+                                            <constraint firstItem="iIb-wh-DUC" firstAttribute="height" secondItem="7T7-UB-bgT" secondAttribute="height" multiplier="0.2" id="LBf-eL-q61"/>
                                             <constraint firstAttribute="trailing" secondItem="6Wo-Qt-ZPa" secondAttribute="trailing" id="O3z-SV-F0N"/>
                                             <constraint firstItem="6Wo-Qt-ZPa" firstAttribute="leading" secondItem="7T7-UB-bgT" secondAttribute="leading" id="Rzu-ib-gCt"/>
-                                            <constraint firstItem="6Wo-Qt-ZPa" firstAttribute="height" secondItem="7T7-UB-bgT" secondAttribute="height" multiplier="0.85" id="m1T-wq-0rZ"/>
-                                            <constraint firstAttribute="trailing" secondItem="WF9-Nj-b8C" secondAttribute="trailing" id="pSE-fw-Vgs"/>
-                                            <constraint firstItem="WF9-Nj-b8C" firstAttribute="top" secondItem="7T7-UB-bgT" secondAttribute="top" id="psA-nW-bRO"/>
+                                            <constraint firstAttribute="trailing" secondItem="iIb-wh-DUC" secondAttribute="trailing" id="SkU-eZ-2k9"/>
+                                            <constraint firstItem="iIb-wh-DUC" firstAttribute="leading" secondItem="7T7-UB-bgT" secondAttribute="leading" id="dJd-MG-kFW"/>
+                                            <constraint firstItem="6Wo-Qt-ZPa" firstAttribute="top" secondItem="7T7-UB-bgT" secondAttribute="top" id="eD3-7U-5GH"/>
+                                            <constraint firstItem="6Wo-Qt-ZPa" firstAttribute="height" secondItem="7T7-UB-bgT" secondAttribute="height" multiplier="0.8" id="m1T-wq-0rZ"/>
                                         </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="Bsk-vr-cE4"/>
+                                            </mask>
+                                        </variation>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Aj-U2-tCv" userLabel="Controls Container">
                                         <rect key="frame" x="0.0" y="268" width="600" height="219"/>
@@ -233,9 +271,9 @@
                     <navigationItem key="navigationItem" title="Quick Roll" id="EHK-DE-AYP"/>
                     <connections>
                         <outlet property="dicePicker" destination="0D5-HN-ku4" id="YlE-Gk-A5K"/>
-                        <outlet property="expressionLabel" destination="vdp-wA-ZcP" id="Crl-g6-Z7P"/>
                         <outlet property="resultLabel" destination="uVj-JS-gMQ" id="d3f-3U-yre"/>
                         <outlet property="rollButton" destination="1EO-TG-Dw1" id="gIa-kN-014"/>
+                        <outlet property="rollsCollectionView" destination="YkT-NE-7ZZ" id="HLn-1Q-39o"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3T5-e2-9Yi" sceneMemberID="firstResponder"/>

@@ -10,20 +10,23 @@ import UIKit
 
 class QuickRollViewController: UIViewController {
   
-  @IBOutlet var expressionLabel: UILabel!
   @IBOutlet var resultLabel: UILabel!
+  @IBOutlet var rollsCollectionView: UICollectionView!
   @IBOutlet var dicePicker: UIPickerView!
   @IBOutlet var rollButton: UIButton!
   
   let pickerData = QuickRollData.data
+  var individualRolls = [Int]()
   let rollButtonColor = UIColor.color(withRedValue: 76, greenValue: 217, blueValue: 100, alpha: 1.0)
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    rollsCollectionView.dataSource = self
+    rollsCollectionView.delegate = self 
     dicePicker.dataSource = self
     dicePicker.delegate = self
     
-    expressionLabel.text = ""
     resultLabel.text = ""
     
     rollButton.layer.borderWidth = 1
@@ -35,24 +38,26 @@ class QuickRollViewController: UIViewController {
     rollButton.clipsToBounds = true
   }
   
-  // MARK - Control Actions
+  // MARK: - Control Actions
   @IBAction func rollTapped(sender: AnyObject) {
     // TODO - This is a temporary proof of concept implementation.  Replace with proper implementation
     // once the expression evaluator is made.
     let numberOfDice = pickerData[0][dicePicker.selectedRowInComponent(0)]
-    let diceConstant = pickerData[1][dicePicker.selectedRowInComponent(1)]
+    //let diceConstant = pickerData[1][dicePicker.selectedRowInComponent(1)]
     let diceSides = pickerData[2][dicePicker.selectedRowInComponent(2)]
     let operatorValue = pickerData[3][dicePicker.selectedRowInComponent(3)]
     let modifierValue = pickerData[4][dicePicker.selectedRowInComponent(4)]
 
-    expressionLabel.text = "\(numberOfDice)\(diceConstant)\(diceSides)\(operatorValue)\(modifierValue)"
+    //expressionLabel.text = "\(numberOfDice)\(diceConstant)\(diceSides)\(operatorValue)\(modifierValue)"
     
+    individualRolls.removeAll()
     var result = 0
     let iterations = Int(numberOfDice)!
     for i in 0..<iterations {
       let dice = UInt32(Int(diceSides)!)
       // Add 1 since the result is 0 indexed.
       let roll = Int(arc4random_uniform(dice)) + 1
+      individualRolls.append(roll)
       result += roll
       print("Roll \(i + 1): \(roll)   Total: \(result)")
     }
@@ -75,6 +80,7 @@ class QuickRollViewController: UIViewController {
     resultLabel.text = "\(result)"
     
     rollButton.backgroundColor = UIColor.whiteColor()
+    rollsCollectionView.reloadData()
   }
   
   @IBAction func rollTappedDown(sender: AnyObject) {
@@ -82,7 +88,31 @@ class QuickRollViewController: UIViewController {
   }
 }
 
-// MARK - UIPickerViewDataSource
+// MARK: - UICollectionViewDataSource
+extension QuickRollViewController: UICollectionViewDataSource {
+  func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+    return 1
+  }
+  
+  func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    return individualRolls.count
+  }
+  
+  func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+    let cell = collectionView.dequeueReusableCellWithReuseIdentifier("IndividualRoll", forIndexPath: indexPath) as! IndividualRollCell
+    
+    cell.textLabel.text = "\(individualRolls[indexPath.row])"
+    
+    return cell
+  }
+}
+
+// MARK: - UICollectionViewDelegate
+extension QuickRollViewController: UICollectionViewDelegate {
+  // TODO - Remove if not used.  Not sure if selection of cell or cell will appear methods are necessary yet.
+}
+
+// MARK: - UIPickerViewDataSource
 extension QuickRollViewController: UIPickerViewDataSource {
   func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
     return pickerData.count
@@ -93,7 +123,7 @@ extension QuickRollViewController: UIPickerViewDataSource {
   }
 }
 
-// MARK - UIPickerViewDelegate
+// MARK: - UIPickerViewDelegate
 extension QuickRollViewController: UIPickerViewDelegate {
   func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
     return pickerData[component][row]
