@@ -10,6 +10,9 @@ import UIKit
 
 class IndividualRollCell: UICollectionViewCell {
   
-  @IBOutlet var textLabel: UILabel!
+  @IBOutlet var countView: UIView!
+  @IBOutlet var countLabel: UILabel!
+  @IBOutlet var valueView: UIView!
+  @IBOutlet var valueLabel: UILabel!
   
 }

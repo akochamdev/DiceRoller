@@ -23,7 +23,6 @@ class QuickRollViewController: UIViewController {
     super.viewDidLoad()
     
     rollsCollectionView.dataSource = self
-    rollsCollectionView.delegate = self 
     dicePicker.dataSource = self
     dicePicker.delegate = self
     
@@ -68,10 +67,6 @@ class QuickRollViewController: UIViewController {
       result += modifier
     case "-":
       result -= modifier
-    case "*":
-      result *= modifier
-    case "/":
-      result /= modifier
     default:
       result += 0
     }
@@ -95,21 +90,24 @@ extension QuickRollViewController: UICollectionViewDataSource {
   }
   
   func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    return individualRolls.count
+    // If rolls array is empty, leave it at 0.  However, if not, then add 1 to take the modifier into consideration.
+    return individualRolls.count == 0 ? individualRolls.count : individualRolls.count + 1
   }
   
   func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
     let cell = collectionView.dequeueReusableCellWithReuseIdentifier("IndividualRoll", forIndexPath: indexPath) as! IndividualRollCell
     
-    cell.textLabel.text = "\(individualRolls[indexPath.row])"
+    cell.layer.borderWidth = 1
+    cell.layer.borderColor = rollButtonColor.CGColor
+    cell.countView.backgroundColor = rollButtonColor
+    cell.countLabel.textColor = UIColor.whiteColor()
+    
+    let isModifier = indexPath.row + 1 == individualRolls.count + 1
+    cell.countLabel.text = isModifier ? "\(pickerData[3][dicePicker.selectedRowInComponent(3)])" : "\(indexPath.row + 1)"
+    cell.valueLabel.text = isModifier ? "\(pickerData[4][dicePicker.selectedRowInComponent(4)])" : "\(individualRolls[indexPath.row])"
     
     return cell
   }
-}
-
-// MARK: - UICollectionViewDelegate
-extension QuickRollViewController: UICollectionViewDelegate {
-  // TODO - Remove if not used.  Not sure if selection of cell or cell will appear methods are necessary yet.
 }
 
 // MARK: - UIPickerViewDataSource
